@@ -1,0 +1,82 @@
+{
+  "jobs": [
+    {
+      "id": "72ec656e69bd",
+      "name": "KnowledgeBase sync servidor\u2192MacBook",
+      "prompt": "Executa o script ~/sync_knowledge_base.sh para sincronizar o KnowledgeBase do servidor Linux para o MacBook local. O script j\u00e1 existe e \u00e9 auto-contido. Faz output de resultado m\u00ednimo para o log.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */4 * * *",
+        "display": "0 */4 * * *"
+      },
+      "schedule_display": "0 */4 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 18
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-02T23:07:03.156843-03:00",
+      "next_run_at": "2026-05-06T00:00:00-03:00",
+      "last_run_at": "2026-05-05T20:03:27.842440-03:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "435025823",
+        "chat_name": "\u00c1lvaro Biano",
+        "thread_id": null
+      },
+      "enabled_toolsets": null,
+      "workdir": "/Users/alvarobiano"
+    },
+    {
+      "id": "a812935f19c9",
+      "name": "Organizar Desktop automaticamente",
+      "prompt": "Execute o script organizar_desktop.sh para organizar o Desktop sem apagar nada.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "organizar_desktop.sh",
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 * * * *",
+        "display": "0 * * * *"
+      },
+      "schedule_display": "0 * * * *",
+      "repeat": {
+        "times": null,
+        "completed": 33
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-04T13:05:59.697011-03:00",
+      "next_run_at": "2026-05-05T22:00:00-03:00",
+      "last_run_at": "2026-05-05T21:01:00.310155-03:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": "/Users/alvarobiano/Documents/Mesa"
+    }
+  ],
+  "updated_at": "2026-05-05T21:01:00.310676-03:00"
+}

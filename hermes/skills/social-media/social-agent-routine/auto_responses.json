@@ -1,0 +1,169 @@
+{
+  "version": "1.0",
+  "description": "Auto-response configuration for Social Agent",
+  "rag_enabled": true,
+  "rag_knowledge_base": "~/KnowledgeBase/knowledge_db/",
+  "platforms": ["xitter", "buffer", "telegram", "instagram"],
+  "faq_patterns": [
+    {
+      "id": "faq_001",
+      "category": "metodo_ten",
+      "patterns": [
+        "o que é método ten",
+        "o que é o método ten",
+        "método ten",
+        "em que consiste o método",
+        "como funciona o método ten",
+        "o que é o método"
+      ],
+      "rag_query": "Método TEN descrição definição",
+      "response_templates": [
+        "Olá! O Método TEN é uma abordagem integrativa em saúde emocional que transforma a forma como você se relaciona consigo mesmo e com o mundo. Quer saber mais? Acesse @link_ten",
+        "O Método TEN trabalha três dimensões: Técnica, Emocional e Nutricional para alcançar equilíbrio e bem-estar. Quer conhecer mais? Visite @link_ten"
+      ],
+      "escalate": false
+    },
+    {
+      "id": "faq_002",
+      "category": "cursos",
+      "patterns": [
+        "valor do curso",
+        "preço do curso",
+        "quanto custa",
+        "valor da formação",
+        "preço da formação",
+        "como funciona o curso",
+        "quais cursos",
+        "o que oferece",
+        "tenho interesse em fazer um curso",
+        "quero me inscrever"
+      ],
+      "rag_query": "cursos formações preços método TEN",
+      "response_templates": [
+        "Olá! Oferecemos cursos de formação profissional e especialização em saúde emocional e psicossomática. Quer conhecer as opções? Acesse @link_cursos"
+      ],
+      "escalate": true,
+      "escalate_reason": "potential_sale"
+    },
+    {
+      "id": "faq_003",
+      "category": "consulta",
+      "patterns": [
+        "como agendar consulta",
+        "quero marcar consulta",
+        "como marcar uma consulta",
+        "agendar consulta",
+        "marcando consulta",
+        "consulta online",
+        "atendimento"
+      ],
+      "rag_query": "consulta agendamento contato",
+      "response_templates": [
+        "Olá! Você pode agendar sua consulta pelo link: @link_consulta. Será um prazer atendê-lo!"
+      ],
+      "escalate": false
+    },
+    {
+      "id": "faq_004",
+      "category": "livros",
+      "patterns": [
+        "livro digital",
+        "onde comprar livro",
+        "como adquirir o livro",
+        "livro sobre",
+        "indicações de leitura"
+      ],
+      "rag_query": "livros digitais publicados Álvaro",
+      "response_templates": [
+        "Olá! Nossos livros digitais estão disponíveis em @link_livros. Lá você encontra obras sobre saúde emocional, psicossomática e desenvolvimento pessoal."
+      ],
+      "escalate": false
+    },
+    {
+      "id": "faq_005",
+      "category": "apoio",
+      "patterns": [
+        "estou pasando por um momento difícil",
+        "preciso de ajuda",
+        "não estou bem",
+        "estou triste",
+        "estou ansioso",
+        "estou deprimido",
+        "não sei o que fazer"
+      ],
+      "rag_query": "apoio emocional crise",
+      "response_templates": [
+        "Olá! Agradeço por compartilhar comigo. Lembre-se que buscar ajuda é um sinal de força. Posso te ajudar a encontrar o suporte adequado? Acesse @link_consulta ou ligue para o CVV: 188."
+      ],
+      "escalate": true,
+      "escalate_reason": "emotional_support_needed"
+    },
+    {
+      "id": "faq_006",
+      "category": "colaboracao",
+      "patterns": [
+        "quero colaborar",
+        "tenho uma sugestão",
+        "queria propor",
+        "tenho uma ideia",
+        "parceria",
+        "colaborar"
+      ],
+      "rag_query": "parceria colaboração",
+      "response_templates": [
+        "Olá! Adoramos ouvir ideias. Pode me contar mais sobre sua sugestão? Vou repassar ao time."
+      ],
+      "escalate": true,
+      "escalate_reason": "potential_partnership"
+    },
+    {
+      "id": "faq_007",
+      "category": "gratidao",
+      "patterns": [
+        "muito obrigado",
+        "obrigada",
+        "você me ajudou",
+        "conteúdo incrível",
+        "muito bom",
+        "adorei",
+        "excelente"
+      ],
+      "response_templates": [
+        "Olá! Que alegria saber que nosso conteúdo tocou você! Obrigado pelo feedback. Continue conosco para mais conhecimento!"
+      ],
+      "escalate": false
+    },
+    {
+      "id": "faq_008",
+      "category": "saudacao",
+      "patterns": [
+        "bom dia",
+        "boa tarde",
+        "boa noite",
+        "olá",
+        "oi",
+        "eae",
+        "hey"
+      ],
+      "response_templates": [
+        "Olá! Tudo bem? Como posso te ajudar hoje?",
+        "Oi! Bem-vindo! Em que posso ser útil?"
+      ],
+      "escalate": false
+    }
+  ],
+  "response_rules": {
+    "max_length": 280,
+    "include_emoji": false,
+    "personality": "warm_professional",
+    "tone": "friendly_supportive",
+    "always_include_cta": true,
+    "cta_patterns": {
+      "consulta": "@link_consulta",
+      "cursos": "@link_cursos",
+      "livros": "@link_livros",
+      "ten": "@link_ten"
+    }
+  },
+  "rag_system_prompt": "Você é o assistente do Álvaro Bianoi e da Maryanne Braga. Use o contexto disponível para responder perguntas sobre o Método TEN, cursos, livros e consultas de forma precisa e calorosa."
+}

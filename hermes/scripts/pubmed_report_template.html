@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@page {
+  size: A4;
+  margin: 25mm 20mm 25mm 20mm;
+  @bottom-center {
+    content: "Página " counter(page) " de " counter(pages);
+    font-family: 'Inter', sans-serif;
+    font-size: 9pt;
+    color: #888;
+  }
+}
+
+@page :first {
+  margin-top: 15mm;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 10pt;
+  line-height: 1.6;
+  color: #222;
+  orphans: 0;
+  widows: 0;
+}
+
+/* ===== CAPA / CABEÇALHO ===== */
+.report-header {
+  border-bottom: 4px solid #1a5f4a;
+  padding-bottom: 12pt;
+  margin-bottom: 20pt;
+}
+
+.report-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8pt;
+}
+
+.report-title-block {
+  flex: 1;
+}
+
+.report-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 22pt;
+  font-weight: 700;
+  color: #1a3a2a;
+  letter-spacing: -0.5pt;
+  line-height: 1.2;
+  margin-bottom: 4pt;
+}
+
+.report-subtitle {
+  font-size: 11pt;
+  color: #1a5f4a;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5pt;
+}
+
+.report-date-badge {
+  background: #1a5f4a;
+  color: white;
+  padding: 6pt 12pt;
+  border-radius: 4pt;
+  font-size: 9pt;
+  font-weight: 600;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.report-info-bar {
+  background: #f0f7f4;
+  border-left: 4px solid #1a5f4a;
+  padding: 8pt 12pt;
+  margin-top: 10pt;
+  font-size: 9.5pt;
+  color: #333;
+}
+
+.report-info-bar strong {
+  color: #1a5f4a;
+}
+
+/* ===== DIVISOR DE SEÇÃO ===== */
+.section-divider {
+  border: none;
+  border-top: 2px solid #1a5f4a;
+  margin: 18pt 0 14pt 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14pt;
+}
+
+.section-icon {
+  font-size: 14pt;
+  margin-right: 8pt;
+}
+
+.section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 15pt;
+  font-weight: 700;
+  color: #1a3a2a;
+}
+
+/* ===== ESTUDO ===== */
+.study {
+  margin-bottom: 22pt;
+  page-break-inside: avoid;
+}
+
+.study-title {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #1a3a2a;
+  margin-bottom: 5pt;
+  line-height: 1.35;
+  orphans: 0;
+  widows: 0;
+}
+
+.study-number {
+  display: inline-block;
+  background: #1a5f4a;
+  color: white;
+  width: 18pt;
+  height: 18pt;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 18pt;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-right: 7pt;
+  vertical-align: middle;
+}
+
+.field-label {
+  font-size: 8pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8pt;
+  color: #1a5f4a;
+  margin-top: 7pt;
+  margin-bottom: 2pt;
+}
+
+.field-value {
+  font-size: 9.5pt;
+  color: #333;
+  padding-left: 0;
+  orphans: 0;
+  widows: 0;
+}
+
+.field-value.english-title {
+  font-style: italic;
+  color: #555;
+}
+
+.field-value a {
+  color: #1a5f4a;
+  text-decoration: none;
+}
+
+.abstract-text {
+  font-size: 9.5pt;
+  color: #333;
+  text-align: justify;
+  orphans: 0;
+  widows: 0;
+  line-height: 1.65;
+}
+
+.conclusion-box {
+  background: #f0f7f4;
+  border-left: 3px solid #1a5f4a;
+  padding: 6pt 10pt;
+  margin-top: 5pt;
+  font-size: 9.5pt;
+  color: #1a3a2a;
+  orphans: 0;
+  widows: 0;
+  page-break-inside: avoid;
+}
+
+/* ===== FOOTER ===== */
+.report-footer {
+  border-top: 2px solid #1a5f4a;
+  margin-top: 20pt;
+  padding-top: 8pt;
+  font-size: 8pt;
+  color: #888;
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<!-- CABEÇALHO -->
+<div class="report-header">
+  <div class="report-meta">
+    <div class="report-title-block">
+      <div class="report-subtitle">Método TEN — PubMed Research</div>
+      <div class="report-title">Relatório Científico<br>Saúde da Mulher</div>
+    </div>
+    <div class="report-date-badge">
+      <div style="font-size:7pt;opacity:0.8;margin-bottom:2pt;">DATA DO RELATÓRIO</div>
+      05 de maio de 2026
+    </div>
+  </div>
+  <div class="report-info-bar">
+    <strong>Tema do dia:</strong> 🧬 Tireoide &nbsp;|&nbsp;
+    <strong>Tópicos:</strong> menopausa → SOPC → endometriose → câncer de mama → osteoporose → <strong>tireoide</strong> → (repete)
+  </div>
+</div>
+
+<!-- DIVISOR -->
+<hr class="section-divider">
+
+<!-- SEÇÃO TIREOIDE -->
+<div class="section-header">
+  <span class="section-icon">🧬</span>
+  <span class="section-title">Tireoide — 5 Estudos Científicos</span>
+</div>
+
+<!-- ESTUDO 1 -->
+<div class="study">
+  <div class="study-title">
+    <span class="study-number">1</span>
+    Hipotireoidismo Subclínico e Autoimunidade Tireoidiana na Gestação
+  </div>
+
+  <div class="field-label">Título original (inglês)</div>
+  <div class="field-value english-title">Subclinical Hypothyroidism and Thyroid Autoimmunity in Pregnancy: To Treat or Not to Treat</div>
+
+  <div class="field-label">Data de publicação</div>
+  <div class="field-value">15 de junho de 2024</div>
+
+  <div class="field-label">DOI</div>
+  <div class="field-value">10.1016/j.ecl.2024.05.010</div>
+
+  <div class="field-label">PubMed</div>
+  <div class="field-value"><a href="https://pubmed.ncbi.nlm.nih.gov/39084813/">https://pubmed.ncbi.nlm.nih.gov/39084813/</a></div>
+
+  <div class="field-label">Resumo</div>
+  <div class="abstract-text">O hipotireoidismo subclínico e a autoimunidade tireoidiana são condições comuns na gestação. Ambas estão associadas a desfechos adversos maternos e perinatais. Mulheres com autoimunidade tireoidiana devem ser monitoradas com testes regulares de função tireoidiana no período pré-concepção e durante a gestação para identificar o desenvolvimento de hipotireoidismo. A eficácia do tratamento com hormônio tireoidiano na redução de desfechos adversos foi estudada em vários ensaios clínicos randomizados. A evidência atual demonstra benefícios obstétricos do tratamento com levotiroxina em mulheres grávidas com nível de TSH superior a 4 mU/L.</div>
+
+  <div class="conclusion-box">
+    <strong>Conclusões:</strong> O estudo conclui que mulheres com TSH > 4 mU/L no início da gestação se beneficiam do tratamento com levotiroxina para reduzir complicações obstétricas. A decisão terapêutica deve ser individualizada, considerando o risco de anticorpos antitireoidianos e o impacto potencial sobre desfechos maternos e fetais.
+  </div>
+</div>
+
+<!-- ESTUDO 2 -->
+<div class="study">
+  <div class="study-title">
+    <span class="study-number">2</span>
+    Hipotireoidismo: Diagnóstico e Tratamento Baseado em Evidências
+  </div>
+
+  <div class="field-label">Título original (inglês)</div>
+  <div class="field-value english-title">Hypothyroidism: Diagnosis and Evidence-Based Treatment</div>
+
+  <div class="field-label">Data de publicação</div>
+  <div class="field-value">5 de abril de 2022</div>
+
+  <div class="field-label">DOI</div>
+  <div class="field-value">10.1111/jmwh.13358</div>
+
+  <div class="field-label">PubMed</div>
+  <div class="field-value"><a href="https://pubmed.ncbi.nlm.nih.gov/35384263/">https://pubmed.ncbi.nlm.nih.gov/35384263/</a></div>
+
+  <div class="field-label">Resumo</div>
+  <div class="abstract-text">O hipotireoidismo afeta até 5% da população global. A incidência aumenta com a idade e é mais comum em mulheres e indivíduos com exposição prolongada ao estrogênio. Os sintomas podem se desenvolver lentamente e frequentemente mimetizam sintomas de outros distúrbios, incluindo anormalidades do ciclo menstrual. O diagnóstico depende da dosagem do TSH (hormônio tireoestimulante) e confirmação com níveis de tiroxina. O tratamento geralmente envolve monoterapia com levotiroxina administrada em jejum. A maioria dos indivíduos com hipotireoidismo pode ser diagnosticada e tratada por clínicos de atenção primária ambulatorial.</div>
+
+  <div class="conclusion-box">
+    <strong>Conclusões:</strong> O artigo reforça que o diagnóstico precoce através da dosagem de TSH é fundamental, especialmente em mulheres em idade reprodutiva. O tratamento com levotiroxina em dose única matinal é eficaz e seguro, com acompanhamento regular do TSH e alívio dos sintomas. O encaminhamento ao especialista é necessário apenas para casos complexos.
+  </div>
+</div>
+
+<!-- ESTUDO 3 -->
+<div class="study">
+  <div class="study-title">
+    <span class="study-number">3</span>
+    Hipertireoidismo: Uma Revisão
+  </div>
+
+  <div class="field-label">Título original (inglês)</div>
+  <div class="field-value english-title">Hyperthyroidism: A Review</div>
+
+  <div class="field-label">Data de publicação</div>
+  <div class="field-value">17 de outubro de 2023</div>
+
+  <div class="field-label">DOI</div>
+  <div class="field-value">10.1001/jama.2023.19052</div>
+
+  <div class="field-label">PubMed</div>
+  <div class="field-value"><a href="https://pubmed.ncbi.nlm.nih.gov/37847271/">https://pubmed.ncbi.nlm.nih.gov/37847271/</a></div>
+
+  <div class="field-label">Resumo</div>
+  <div class="abstract-text">O hipertireoidismo franco, definido como TSH suprimido com concentrações elevadas de T3 e/ou T4 livre, afeta aproximadamente 0,2% a 1,4% da população mundial. A causa mais comum é a doença de Graves, com prevalência global de 2% em mulheres e 0,5% em homens. O hipertireoidismo não tratado pode causar arritmias cardíacas, insuficiência cardíaca, osteoporose e desfechos adversos na gestação. As opções de tratamento incluem drogas antitireoidianas, ablação por iodo radioativo e cirurgia. A escolha deve ser individualizada e centrada no paciente.</div>
+
+  <div class="conclusion-box">
+    <strong>Conclusões:</strong> O hipertireoidismo afeta 2,5% dos adultos globalmente e está associado a osteoporose, doença cardíaca e aumento da mortalidade. Os tratamentos de primeira linha são drogas antitireoidianas, cirurgia tireoidiana e iodo radioativo. Pacientes com hipertireoidismo subclínico e TSH < 0,1 mIU/L, especialmente maiores de 65 anos ou com risco cardiovascular elevado, devem ser tratados.
+  </div>
+</div>
+
+<!-- ESTUDO 4 -->
+<div class="study">
+  <div class="study-title">
+    <span class="study-number">4</span>
+    Avaliação e Tratamento de Distúrbios Tireoidianos na Gestação e no Pós-Parto
+  </div>
+
+  <div class="field-label">Título original (inglês)</div>
+  <div class="field-value english-title">Assessment and Treatment of Thyroid Disorders in Pregnancy and the Postpartum Period</div>
+
+  <div class="field-label">Data de publicação</div>
+  <div class="field-value">4 de janeiro de 2022</div>
+
+  <div class="field-label">DOI</div>
+  <div class="field-value">10.1038/s41574-021-00604-z</div>
+
+  <div class="field-label">PubMed</div>
+  <div class="field-value"><a href="https://pubmed.ncbi.nlm.nih.gov/34983968/">https://pubmed.ncbi.nlm.nih.gov/34983968/</a></div>
+
+  <div class="field-label">Resumo</div>
+  <div class="abstract-text">Os distúrbios tireoidianos são prevalentes em mulheres grávidas. O hormônio tireoidiano tem papel crítico no desenvolvimento fetal e na saúde materna. O hipotireoidismo não tratado na gestação está associado a risco aumentado de abortamento espontâneo, parto prematuro, pré-eclâmpsia e déficit de neurodesenvolvimento na prole. O rastreamento universal de função tireoidiana na gestação é controverso, mas recomendado em populações de alto risco. A levotiroxina é o tratamento de escolha durante a gestação, sendo segura para o feto.</div>
+
+  <div class="conclusion-box">
+    <strong>Conclusões:</strong> O manejo de distúrbios tireoidianos na gestação requer acompanhamento close e ajuste de dose de levotiroxina. O rastreamento é recomendado para mulheres com fatores de risco. A meta de TSH no primeiro trimestre é &lt; 2,5 mU/L, com ajuste das referências de normality de acordo com o trimestre da gestação.
+  </div>
+</div>
+
+<!-- ESTUDO 5 -->
+<div class="study">
+  <div class="study-title">
+    <span class="study-number">5</span>
+    Câncer de Tireoide: Rastreamento, Diagnóstico e Manejo
+  </div>
+
+  <div class="field-label">Título original (inglês)</div>
+  <div class="field-value english-title">Thyroid Cancer: Screening, Diagnosis, and Management</div>
+
+  <div class="field-label">Data de publicação</div>
+  <div class="field-value">28 de janeiro de 2025</div>
+
+  <div class="field-label">DOI</div>
+  <div class="field-value">10.1016/j.ecl.2025.01.002</div>
+
+  <div class="field-label">PubMed</div>
+  <div class="field-value"><a href="https://pubmed.ncbi.nlm.nih.gov/39809363/">https://pubmed.ncbi.nlm.nih.gov/39809363/</a></div>
+
+  <div class="field-label">Resumo</div>
+  <div class="abstract-text">O carcinoma tireoidiano é o carcinoma endócrino mais comum, com incidência crescente nas últimas três décadas, principalmente devido ao diagnóstico de nódulos pequenos e assintomáticos. O tipo mais prevalente é o carcinoma papilífero, responsável por 80% dos casos. O rastreamento com ultrassonografia cervical em populações de alto risco pode identificar lesões precocemente. O manejo envolve cirurgia tireoidiana (lobectomia ou tireoidectomia total), seguida de radioiodo em casos de doença avançada. O seguimiento a longo prazo com tiroglobulina e ultrassonografia é essencial.</div>
+
+  <div class="conclusion-box">
+    <strong>Conclusões:</strong> A incidência de cáncer de tireoide tem aumentado, especialmente em mulheres jovens. O diagnóstico precoce via ultrassonografia e Biópsia por aspiração com agulha fina (BAAF) melhora os desfechos. O tratamento cirúrgico é curativo na maioria dos casos de carcinoma papilífero, com sobrevida superior a 95% em 10 anos.
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="report-footer">
+  Método TEN — PubMed Research | Relatório gerado automaticamente via Hermes Agent | Dados: PubMed/NCBI
+</div>
+
+</body>
+</html>

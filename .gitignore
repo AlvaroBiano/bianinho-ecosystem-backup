@@ -1,0 +1,19 @@
+# Large binary files
+*.db-shm
+*.db-wal
+
+# OS files
+.DS_Store
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Caches
+cache/
+sessions/
+logs/

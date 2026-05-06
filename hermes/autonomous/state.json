@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "cycle_id": "79c6e61a",
+  "last_cycle_at": "2026-05-06T00:15:01.034447+00:00",
+  "last_cycle_duration_s": 0.06717324256896973,
+  "cycles_total": 496,
+  "last_cycle_summary": "0 acções",
+  "active_tasks": [],
+  "pending_decisions": [],
+  "memory_snapshot": {
+    "wins": [
+      {
+        "ts": "2026-04-30T13:31:23.959145+00:00",
+        "text": "Tarefa concluída: Verificar saúde do sistema"
+      },
+      {
+        "ts": "2026-04-30T13:20:30.726162+00:00",
+        "text": "Tarefa concluída: Processar livro pendente no RAG"
+      }
+    ],
+    "concerns": [],
+    "ongoing": []
+  },
+  "health": {
+    "hermes_ok": true,
+    "rag_ok": true,
+    "services_ok": true,
+    "timestamp": "2026-05-06T00:15:01.036250+00:00",
+    "details": {
+      "hermes_procs": "56659\n57380\n57381\n93210"
+    }
+  },
+  "flags": {},
+  "journal": [
+    {
+      "ts": "2026-04-30T13:31:23.958775+00:00",
+      "type": "task_done",
+      "message": "Verificar saúde do sistema",
+      "data": {
+        "task_id": "7a8d4565",
+        "result": "Hermes: OK | Disco: 37% usado | RAM: ERRO"
+      }
+    },
+    {
+      "ts": "2026-04-30T13:20:30.725841+00:00",
+      "type": "task_done",
+      "message": "Processar livro pendente no RAG",
+      "data": {
+        "task_id": "e34e6f70",
+        "result": "RAG OK — \n📊 ESTATÍSTICAS DO BANCO VETORIAL\n   ────────────────────────────────────────\n   Total de chunks:  64802\n   Tabelas:          api, chunks, default, metodoten, prd_collection\n\n   📚 Por categor"
+      }
+    },
+    {
+      "ts": "2026-04-30T13:17:50.875470+00:00",
+      "type": "cycle_crash",
+      "message": "name 'get' is not defined",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-30T13:17:44.866182+00:00",
+      "type": "cycle_crash",
+      "message": "name 'get' is not defined",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-30T13:17:40.143658+00:00",
+      "type": "cycle_crash",
+      "message": "name 'get' is not defined",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-30T13:17:17.509280+00:00",
+      "type": "cycle_crash",
+      "message": "name 'get' is not defined",
+      "data": {}
+    }
+  ]
+}

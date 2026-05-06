@@ -1,0 +1,3 @@
+# No additional requirements
+
+All dependencies are handled by the hermes-agent environment.
