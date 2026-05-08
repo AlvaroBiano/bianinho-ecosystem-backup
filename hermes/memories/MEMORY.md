@@ -4,7 +4,7 @@ AionUI v1.9.25. baseUrl corrigido para api.minimax.io. Config: ~/Library/Applica
 §
 Cron sistema (crontab): team_leader */5min | cycle */15min | self_improving */6h | image */10min. Hermes jobs: 2ef7a80293de | 86098826da70 | 72ec656e69bd.
 §
-BACKUP EXTERNO (pendente — Álvaro vai plugar HD): Backup total: KnowledgeBase (~1.9GB) + sessions + videos + BD AionUI + .env real + ~/.hermes/ completo. Ver skill bianinho-sessao-05052026. Sem cron. Álvaro avisa quando HD pronto.
+BACKUP EXTERNO (pendente — Álvaro vai plugar HD): Backup total: KnowledgeBase (~1.9GB) + sessions + videos + BD AionUI + .env real + ~/.hermes/ completo. Ver skill bianinho-sessao-08052026. GitHub: bianinho-ecosystem-backup atualizado 08/05. Local: ~/Documents/Backup_Bianinho/ (318MB). Sem cron. Álvaro avisa quando HD pronto.
 §
 Cripto: crypto_signal_alert.py (5min, job 2ef7a80293de) + binance_sniper_alert.py (1h, job 86098826da70). Token Telegram: @AleteiaClaw_bot (8109921192:AAHc_kzlkMNPSXahkSmOq8jSnUoV_xv1MtY), chat 435025823. Álvaro NÃO quer alertas no chat com Bianinho — só no chat com @AleteiaClaw_bot. NajjaBot (851678... do .env) não funciona em chamadas API directas.
 §
