@@ -31,9 +31,10 @@ for ext in mp4 mov avi mkv; do
   done
 done
 
-# Pastas (não apps)
+# Pastas (não apps, não "Estudos Profissionais")
 for f in "$DESKTOP"/*/; do
-  [ -d "$f" ] && ! echo "$f" | grep -qE "\.(app|Downie|localized)" && mv "$f" "$MESA/" 2>/dev/null && ((movidos++))
+  [ -d "$f" ] && echo "$f" | grep -qE "Estudos Profissionais/$" && continue
+  [ -d "$f" ] && ! echo "$f" | grep -qE "\.(app|Downie|localized)$" && mv "$f" "$MESA/" 2>/dev/null && ((movidos++))
 done
 
 echo "Desktop organizado. Ficheiros movidos: $movidos"
